@@ -1,0 +1,35 @@
+ ---------------------------------------------------------------
+ Vortex Lattice Output -- Total Forces
+
+ Configuration: SuperGee                                                    
+     # Surfaces =   5
+     # Strips   =  68
+     # Vortices = 632
+
+  Sref =  336.00       Cref =  5.5000       Bref =  59.000    
+  Xref =  3.0000       Yref =  0.0000       Zref = 0.50000    
+
+ Standard axis orientation,  X fwd, Z down         
+
+ Run case:  -unnamed-                              
+
+  Alpha =   0.00000     pb/2V =  -0.00000     p'b/2V =  -0.00000
+  Beta  =   0.00000     qc/2V =   0.00000
+  Mach  =     0.000     rb/2V =  -0.00000     r'b/2V =  -0.00000
+
+  CXtot =  -0.02094     Cltot =  -0.00000     Cl'tot =  -0.00000
+  CYtot =  -0.00000     Cmtot =   0.04131
+  CZtot =  -0.17261     Cntot =   0.00000     Cn'tot =   0.00000
+
+  CLtot =   0.17261
+  CDtot =   0.02094
+  CDvis =   0.02000     CDind = 0.0009408
+  CLff  =   0.17249     CDff  = 0.0009380    | Trefftz
+  CYff  =  -0.00000         e =    0.9746    | Plane  
+
+   camber          =   0.00000
+   aileron         =   0.00000
+   elevator        =   0.00000
+   rudder          =   0.00000
+
+ ---------------------------------------------------------------

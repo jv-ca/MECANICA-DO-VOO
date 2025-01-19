@@ -1,0 +1,49 @@
+function plotar_variaveis_estado(tempo, u, v, w, p, q, r, phi, theta, psi, x_E, y_E, z_E)
+    % Função para plotar o comportamento dinâmico das variáveis de estado
+    % Entrada:
+    % tempo    - Vetor de tempo (em segundos)
+    % u, v, w  - Velocidades nas direções do corpo
+    % p, q, r  - Taxas de rotação do corpo (rolamento, arfagem, guinada)
+    % phi, theta, psi - Ângulos de atitude (rolamento, arfagem, guinada)
+    % x_E, y_E, z_E - Posições no espaço (x, y, z)
+
+    % Configuração da figura
+    figure;
+    set(gcf, 'Position', [1, -100, 1100, 800]);
+
+    % Gráficos individuais para cada variável de estado
+    subplot(3, 4, 1); plot(tempo, u, 'b'); grid on; xlabel('Tempo (s)'); ylabel('u (m/s)'); title('Velocidade u');
+    subplot(3, 4, 2); plot(tempo, v, 'r'); grid on; xlabel('Tempo (s)'); ylabel('v (m/s)'); title('Velocidade v');
+    subplot(3, 4, 3); plot(tempo, w, 'g'); grid on; xlabel('Tempo (s)'); ylabel('w (m/s)'); title('Velocidade w');
+    subplot(3, 4, 4); plot(tempo, p, 'm'); grid on; xlabel('Tempo (s)'); ylabel('p (rad/s)'); title('Taxa de Rolamento (p)');
+    subplot(3, 4, 5); plot(tempo, q, 'c'); grid on; xlabel('Tempo (s)'); ylabel('q (rad/s)'); title('Taxa de Arfagem (q)');
+    subplot(3, 4, 6); plot(tempo, r, 'k'); grid on; xlabel('Tempo (s)'); ylabel('r (rad/s)'); title('Taxa de Guinada (r)');
+    subplot(3, 4, 7); plot(tempo, phi, 'b'); grid on; xlabel('Tempo (s)'); ylabel('\phi (rad)'); title('Ângulo de Rolamento (\phi)');
+    subplot(3, 4, 8); plot(tempo, theta, 'r'); grid on; xlabel('Tempo (s)'); ylabel('\theta (rad)'); title('Ângulo de Arfagem (\theta)');
+    subplot(3, 4, 9); plot(tempo, psi, 'g'); grid on; xlabel('Tempo (s)'); ylabel('\psi (rad)'); title('Ângulo de Guinada (\psi)');
+    subplot(3, 4, 10); plot(tempo, x_E, 'm'); grid on; xlabel('Tempo (s)'); ylabel('x_E (m)'); title('Posição x_E');
+    subplot(3, 4, 11); plot(tempo, y_E, 'c'); grid on; xlabel('Tempo (s)'); ylabel('y_E (m)'); title('Posição y_E');
+    subplot(3, 4, 12); plot(tempo, z_E, 'k'); grid on; xlabel('Tempo (s)'); ylabel('z_E (m)'); title('Altura z_E');
+
+    % Título geral
+    sgtitle('Comportamento Dinâmico das Variáveis de Estado');
+end
+
+tempo = 0:0.01:100; % De 0 a 100 segundos com passo de 0.01
+u = sin(0.1 * tempo);
+v = cos(0.1 * tempo);
+w = 0.5 * sin(0.2 * tempo);
+p = 0.1 * cos(0.3 * tempo);
+q = 0.1 * sin(0.3 * tempo);
+r = 0.05 * cos(0.5 * tempo);
+phi = 0.1 * sin(0.2 * tempo);
+theta = 0.1 * cos(0.2 * tempo);
+psi = 0.2 * sin(0.1 * tempo);
+x_E = cumsum(u * 0.1); % Integração aproximada
+y_E = cumsum(v * 0.1); % Integração aproximada
+z_E = -abs(cumsum(w * 0.1)); % Integração negativa (altitude)
+
+% Chama a função para plotar
+plotar_variaveis_estado(tempo, u, v, w, p, q, r, phi, theta, psi, x_E, y_E, z_E);
+
+

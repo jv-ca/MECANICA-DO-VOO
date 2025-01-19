@@ -1,0 +1,125 @@
+DA20_Katana   
+0               ! Mach
+0 0 0           ! iYsym iZSym Zsym
+15.428 1.09 10.84 ! Sref Cref Bref 
+0 0 0         ! Xref Yref Zref 
+
+SURFACE
+DA20_Wing ! Index da superfície
+30  1  20  1.0 ! Nchord Cspace (parâmetros do método de vortice lattice)
+YDUPLICATE
+0 ! 
+SCALE
+1 1 1 ! Xscale Yscale Zscale
+TRANSLATE
+0 0 0 ! Sem offset do ponto original da asa
+ANGLE
+0 ! Angulo de incidência
+
+SECTION ! Seção da asa na base
+0       0       0       1.259    3 
+#Xle    Yle     Zle     Chord   Ainc 
+
+AFIL
+Wortmann_FX_63_137_20.dat
+
+CONTROL 
+flap    1       0.7         0 0 0       1.0 
+#name   gain    Xhinge      XYZhvec     SgnDup
+
+CONTROL 
+aileron     1       0.7         0 0 0       -1.0 
+#name       gain    Xhinge      XYZhvec     SgnDup
+
+
+SECTION ! Seção da quebra na asa
+0.082   4.704   0.329   1.007   3 
+#Xle    Yle     Zle     Chord   Ainc 
+AFIL
+Wortmann_FX_63_137_20.dat
+
+CONTROL 
+flap    1       0.7         0 0 0       1.0 
+#name   gain    Xhinge      XYZhvec     SgnDup
+
+CONTROL 
+aileron     1       0.7         0 0 0       -1.0 
+#name       gain    Xhinge      XYZhvec     SgnDup
+
+SECTION ! Seção da asa na ponta
+0.787   5.42    0.710   0.302    3 
+#Xle    Yle     Zle     Chord   Ainc 
+
+AFIL
+Wortmann_FX_63_137_20.dat 
+
+SURFACE
+DA20_Vertical_Stabilizer ! Index da superfície
+30  1  14  0.75 ! Nchord Cspace (parâmetros do método de vortice lattice)
+TRANSLATE
+0 0 0 ! Sem offset do ponto original
+ANGLE
+0 ! Angulo de incidência
+
+SECTION ! Seção da base do estabilizador vertical
+3.860       0       -0.2      1.338       0 
+#Xle        Yle     Zle       Chord       Ainc 
+
+AFIL
+Wortmann_FX_63_137_20.dat
+
+CONTROL 
+rudder      1       0.7         0 0 0       1.0 
+#name       gain    Xhinge      XYZhvec     SgnDup
+
+SECTION ! Seção da ponta do estabilizador vertical
+4.395       0       1.426      0.803       0 
+#Xle        Yle     Zle        Chord       Ainc 
+
+AFIL
+Wortmann_FX_63_137_20.dat
+
+CONTROL 
+rudder      1       0.7         0 0 0       1.0 
+#name       gain    Xhinge      XYZhvec     SgnDup
+
+SURFACE
+DA20_Horizontal_Stabilizer ! Index da superfície
+30  1  20  1.0 ! Nchord Cspace (parâmetros do método de vortice lattice)
+YDUPLICATE
+0 ! 
+SCALE
+1 1 1 ! Xscale Yscale Zscale
+TRANSLATE
+0 0 0 ! Sem offset do ponto original da asa
+ANGLE
+0 ! Angulo de incidência
+
+SECTION ! Seção da base
+4.271       0       1.426       0.927    2 
+#Xle        Yle     Zle         Chord   Ainc 
+
+AFIL
+Wortmann_FX_63_137_20.dat
+
+CONTROL 
+elevator    1       0.7         0 0 0       1.0 
+#name       gain    Xhinge      XYZhvec     SgnDup
+
+SECTION ! Seção da quebra
+4.456   1.150       1.426       0.742   2 
+#Xle    Yle         Zle         Chord   Ainc
+
+AFIL
+Wortmann_FX_63_137_20.dat
+
+CONTROL 
+elevator    1       0.7         0 0 0       1.0 
+#name       gain    Xhinge      XYZhvec     SgnDup
+
+SECTION ! Seção da ponta
+4.975   1.325       1.426       0.222    2 
+#Xle    Yle         Zle         Chord   Ainc 
+
+AFIL
+Wortmann_FX_63_137_20.dat
