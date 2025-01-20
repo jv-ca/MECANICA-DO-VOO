@@ -76,7 +76,7 @@ function dydt = sistema_aerodinamico(t, y, aeronave, tempo_controle, controle)
     dr_dt = (N - (aeronave.I_yy - aeronave.I_xx)*p*q)/aeronave.I_zz;
     
     % Derivadas dos ângulos de Euler
-    dphi_dt = p + (q * sin(phi) * tan(theta) + r * cos(phi)) * tan(theta);
+    dphi_dt = p + (q * sin(phi) + r * cos(phi)) * tan(theta);
     dtheta_dt = q * cos(phi) - r * sin(phi);
     dpsi_dt = (q * sin(phi) + cos(theta)* r) * sec(theta);
     
